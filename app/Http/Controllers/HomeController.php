@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Data;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -13,7 +14,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('content');
+        $data = Data::all();
+        return view('content',compact('data'));
     }
 
     /**
